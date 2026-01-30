@@ -1,4 +1,4 @@
-# 🚀 QuantumToken - Web3 Token Landing Page
+# 🚀 ClawdCat - Web3 Token Landing Page
 
 A modern, dark-themed Web3 token landing page built with Next.js 14, TypeScript, Tailwind CSS, Wagmi v2, and RainbowKit.
 
@@ -147,7 +147,7 @@ To change fonts, update the Google Fonts import in `src/app/globals.css`.
 
 ### Update Branding
 
-Replace "QuantumToken" with your token name in:
+Replace "ClawdCat" with your token name in:
 - `src/app/layout.tsx` (metadata)
 - `src/components/Navbar.tsx` (logo)
 - `src/app/page.tsx` (hero section)

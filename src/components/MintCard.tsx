@@ -104,10 +104,10 @@ export function MintCard() {
 
   if (!isConnected) {
     return (
-      <div className="border-gradient rounded-2xl p-8 text-center bg-dark-800/50 backdrop-blur-sm">
-        <Wallet className="w-16 h-16 mx-auto mb-4 text-neon-purple opacity-50" />
+      <div className="border-gradient rounded-2xl p-8 text-center bg-orange-100/50 backdrop-blur-sm">
+        <Wallet className="w-16 h-16 mx-auto mb-4 text-neon-orange opacity-50" />
         <h3 className="text-2xl font-display font-bold mb-2">Connect Your Wallet</h3>
-        <p className="text-slate-400">
+        <p className="text-orange-600">
           Connect your wallet to view your balance and mint tokens
         </p>
       </div>
@@ -115,25 +115,25 @@ export function MintCard() {
   }
 
   return (
-    <div className="border-gradient rounded-2xl p-8 bg-dark-800/50 backdrop-blur-sm glow-box relative overflow-hidden">
+    <div className="border-gradient rounded-2xl p-8 bg-orange-100/50 backdrop-blur-sm glow-box relative overflow-hidden">
       {/* Animated background */}
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0 bg-gradient-to-br from-neon-purple via-transparent to-neon-cyan animate-float" />
+        <div className="absolute inset-0 bg-gradient-to-br from-neon-orange via-transparent to-orange-400 animate-float" />
       </div>
 
       <div className="relative z-10">
         {/* User Info */}
-        <div className="flex items-center justify-between mb-6 pb-6 border-b border-dark-600">
+        <div className="flex items-center justify-between mb-6 pb-6 border-b border-orange-200">
           <div>
-            <p className="text-sm text-slate-400 mb-1">Connected Wallet</p>
-            <p className="font-mono text-neon-purple font-medium">
-              {truncateAddress(address)}
+            <p className="text-sm text-orange-600 mb-1">Connected Wallet</p>
+            <p className="font-mono text-neon-orange font-medium">
+              {address ? truncateAddress(address) : "..."}
             </p>
           </div>
           <div className="text-right">
-            <p className="text-sm text-slate-400 mb-1">Your Balance</p>
-            <p className="text-2xl font-bold text-white">
-              {parseFloat(formattedBalance).toLocaleString()} <span className="text-neon-cyan text-lg">{symbol || "QTK"}</span>
+            <p className="text-sm text-orange-600 mb-1">Your Balance</p>
+            <p className="text-2xl font-bold text-orange-900">
+              {parseFloat(formattedBalance).toLocaleString()} <span className="text-orange-500 text-lg">{symbol || "BASE"}</span>
             </p>
           </div>
         </div>
@@ -141,7 +141,7 @@ export function MintCard() {
         {/* Mint Section */}
         <div className="space-y-4">
           <div>
-            <label className="block text-sm font-medium text-slate-300 mb-2">
+            <label className="block text-sm font-medium text-orange-700 mb-2">
               Amount to Mint
             </label>
             <input
@@ -151,7 +151,7 @@ export function MintCard() {
               min="0"
               step="0.01"
               disabled={txStatus === "pending"}
-              className="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-neon-purple focus:ring-2 focus:ring-neon-purple/20 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full px-4 py-3 bg-orange-200 border border-orange-300 rounded-lg text-orange-900 placeholder-orange-500 focus:outline-none focus:border-neon-orange focus:ring-2 focus:ring-neon-orange/20 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
               placeholder="Enter amount"
             />
           </div>
@@ -159,7 +159,7 @@ export function MintCard() {
           <button
             onClick={handleMint}
             disabled={!amount || parseFloat(amount) <= 0 || txStatus === "pending"}
-            className="w-full py-4 bg-gradient-to-r from-neon-purple to-neon-pink rounded-lg font-bold text-white hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 btn-hover flex items-center justify-center space-x-2 group"
+            className="w-full py-4 bg-gradient-to-r from-neon-orange to-orange-400 rounded-lg font-bold text-white hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 btn-hover flex items-center justify-center space-x-2 group"
           >
             {txStatus === "pending" ? (
               <>
@@ -207,7 +207,7 @@ export function MintCard() {
                   href={`https://sepolia.etherscan.io/tx/${hash}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-neon-cyan hover:underline font-mono text-xs"
+                  className="text-orange-500 hover:underline font-mono text-xs"
                 >
                   View on Etherscan
                 </a>

@@ -43,13 +43,13 @@ export function TokenStats({ chainId }: { chainId?: number }) {
   const stats = [
     {
       icon: Coins,
-      label: "Total Supply",
-      value: `${parseFloat(formattedSupply).toLocaleString()} ${symbol || "QTK"}`,
+      label: "Name",
+      value: `${parseFloat(formattedSupply).toLocaleString()} ${symbol || "BASE"}`,
     },
     {
       icon: TrendingUp,
       label: "Network",
-      value: chainId === 1 ? "Ethereum" : "Sepolia",
+      value: chainId === 1 ? "Ethereum" : "Base",
     },
     {
       icon: Activity,
@@ -63,19 +63,19 @@ export function TokenStats({ chainId }: { chainId?: number }) {
       {stats.map((stat, index) => (
         <div
           key={index}
-          className="relative bg-dark-800 border border-dark-600 rounded-lg p-6 overflow-hidden group hover:border-neon-purple/50 transition-all duration-300"
+          className="relative bg-orange-100 border border-orange-200 rounded-lg p-6 overflow-hidden group hover:border-neon-orange/50 transition-all duration-300"
           style={{ animationDelay: `${index * 100}ms` }}
         >
           {/* Background glow effect */}
-          <div className="absolute inset-0 bg-gradient-to-br from-neon-purple/0 to-neon-purple/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <div className="absolute inset-0 bg-gradient-to-br from-neon-orange/0 to-neon-orange/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           
           <div className="relative z-10 flex items-start space-x-4">
-            <div className="p-3 bg-dark-700 rounded-lg group-hover:bg-dark-600 transition-colors">
-              <stat.icon className="w-6 h-6 text-neon-purple" />
+            <div className="p-3 bg-orange-200 rounded-lg group-hover:bg-orange-300 transition-colors">
+              <stat.icon className="w-6 h-6 text-neon-orange" />
             </div>
             <div className="flex-1">
-              <p className="text-sm text-slate-400 font-medium mb-1">{stat.label}</p>
-              <p className="text-xl font-bold text-white">{stat.value}</p>
+              <p className="text-sm text-orange-600 font-medium mb-1">{stat.label}</p>
+              <p className="text-xl font-bold text-orange-900">{stat.value}</p>
             </div>
           </div>
         </div>

@@ -1,0 +1,21 @@
+# docker-compose.yml
+
+version: '3.8'
+
+services:
+  web:
+    container_name: web3-landing
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '3000:3000'
+    restart: unless-stopped
+    env_file:
+      - .env
+    networks:
+      - web3_network
+
+networks:
+  web3_network:
+    driver: bridge

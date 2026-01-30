@@ -4,7 +4,7 @@ import "./globals.css";
 import "@rainbow-me/rainbowkit/styles.css";
 
 export const metadata: Metadata = {
-  title: "QuantunToken | Next-Gen Web3 Asset",
+  title: "ClawdCat | Next-Gen Web3 Asset",
   description: "Mint and trade the future of decentralized finance",
   icons: {
     icon: "/favicon.ico",

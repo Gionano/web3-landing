@@ -1,9 +1,9 @@
 import { getDefaultConfig } from "@rainbow-me/rainbowkit";
-import { sepolia, mainnet } from "wagmi/chains";
+import { mainnet, base } from "wagmi/chains";
 
 export const config = getDefaultConfig({
-  appName: "Web3 Token",
+  appName: "BaseToken",
   projectId: process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID || "YOUR_PROJECT_ID",
-  chains: [sepolia, mainnet],
+  chains: [base, mainnet],
   ssr: true,
 });

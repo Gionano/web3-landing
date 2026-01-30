@@ -1,0 +1,23 @@
+# .dockerignore
+
+# Git
+.git
+.gitignore
+
+# Docker
+Dockerfile
+.dockerignore
+
+# Dependensi
+node_modules
+
+# Hasil build lokal
+.next
+
+# File environment lokal
+.env.local
+.env
+
+# Lain-lain
+README.md
+.idea
